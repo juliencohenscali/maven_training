@@ -7,9 +7,11 @@ public class Sample {
     public int op(Operation op, int a, int b) {
         return op.func.apply(a, b);
     }
+    public int err = 0;
 
     public int fact(int n) {
         if (n < 0) {
+            err = -1;
             throw new IllegalArgumentException("N should be positive");
         }
         return n == 0 ? 1 : n * fact(n - 1);
